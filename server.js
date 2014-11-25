@@ -30,7 +30,7 @@ var db = new sqlite3.Database(dbPath, function(err) {
         app.use(express.static(__dirname + '/static'));
 
         //create routes for our REST API
-        app.use('/api', require('./controllers/tasksController.js').Router());
+        app.use('/api', require('./controllers/tasksController.js').Router(db));
 
 
 //        //GET /api/tasks - returns all tasks
